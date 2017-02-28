@@ -7,18 +7,18 @@ class CartContainer extends React.Component {
     return (
       <div className="cart">
         <table className="table table-striped">
-            <th>Selection</th>
-            <th>Size</th>
-            <th>Quantity</th>
-            <th>Deal Expires</th>
-            <th>Remove</th>
-            <tbody>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Selection</th>
+              <th>Size</th>
+              <th>Quantity</th>
+              <th>Deal Expires</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/*cartItems*/}
+          </tbody>
         </table>
       </div>
     )
