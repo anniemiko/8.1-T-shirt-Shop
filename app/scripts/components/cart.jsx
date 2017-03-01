@@ -1,8 +1,16 @@
 var React = require('react');
 
 var CartCollection = require('../models/catalog.js').CartCollection;
+var CartOrderCollection = require('../models/catalog.js').CartOrderCollection;
 
 class CartContainer extends React.Component {
+  constructor(props){
+    super(props);
+    var cart = new CartCollection();
+  }
+  // addToCart(){
+  //   this.add()
+  // },
   render(){
     return (
       <div className="cart">

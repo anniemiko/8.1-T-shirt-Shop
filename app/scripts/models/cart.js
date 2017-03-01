@@ -1,13 +1,16 @@
 var Backbone = require('backbone');
+Backbone.LocalStorage = require("backbone.localstorage");
 
 var CartItem = Backbone.Collection.extend({
   defaults: {
-    'qty': 1
+    'name': 'name',
+    'qty': 1,
+    'size': ''
   }
 });
 
 var CartCollection = Backbone.Collection.extend({
-  model: CatalogItem
+  model: CartItem
 });
 
 var Cart = Backbone.Model.extend({
@@ -15,6 +18,10 @@ var Cart = Backbone.Model.extend({
     return{
     items: new CartCollection()
     }
+  },
+  parse: function(data){
+    data.items = new CartCollection(data.items);
+    return data;
   },
   localStorage: new Backbone.LocalStorage('Cart')
 });
